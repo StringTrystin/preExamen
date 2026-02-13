@@ -1,0 +1,12 @@
+
+<td>{{ calificacion.matricula }}</td>
+<td>{{ calificacion.nombre }}</td>
+<td [style.color]="esReprobado(calificacion.corte1) ? 'red' : 'black'">{{ calificacion.corte1 }}</td>
+<td [style.color]="esReprobado(calificacion.corte2) ? 'red' : 'black'">{{ calificacion.corte2 }}</td>
+<td [style.color]="esReprobado(calificacion.corte3) ? 'red' : 'black'">{{ calificacion.corte3 }}</td>
+<td>
+  <button (click)="eliminarFila.emit()">Eliminar</button>
+</td>
+<td>
+  <button (click)="seleccionar()">Seleccionar</button>
+</td>
