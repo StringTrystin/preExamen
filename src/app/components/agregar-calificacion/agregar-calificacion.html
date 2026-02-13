@@ -48,16 +48,37 @@
   <div>
     <label>Corte 1:</label>
     <input type="number" formControlName="corte1">
+    @if(formularioCalificaciones.get('corte1')?.errors?.['min']) {
+    <span style="color:red;">La calificacion no puede ser menor que 0</span>
+  }
+
+  @if(formularioCalificaciones.get('corte1')?.errors?.['max']) {
+    <span style="color:red;">La calificacion no puede ser mayor que 10</span>
+  }
   </div>
 
   <div>
     <label>Corte 2:</label>
     <input type="number" formControlName="corte2">
+    @if(formularioCalificaciones.get('corte2')?.errors?.['min']) {
+    <span style="color:red;">La calificacion no puede ser menor que 0</span>
+  }
+
+  @if(formularioCalificaciones.get('corte2')?.errors?.['max']) {
+    <span style="color:red;">La calificacion no puede ser mayor que 10</span>
+  }
   </div>
 
   <div>
     <label>Corte 3:</label>
     <input type="number" formControlName="corte3">
+    @if(formularioCalificaciones.get('corte3')?.errors?.['min']) {
+    <span style="color:red;">La calificacion no puede ser menor que 0</span>
+  }
+
+  @if(formularioCalificaciones.get('corte3')?.errors?.['max']) {
+    <span style="color:red;">La calificacion no puede ser mayor que 10</span>
+  }
   </div>
 
   <div class="botones">

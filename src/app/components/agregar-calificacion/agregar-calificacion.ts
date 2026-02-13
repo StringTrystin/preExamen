@@ -9,15 +9,18 @@ import { Calificacion } from '../calificacion/calificacion';
   templateUrl: './agregar-calificacion.html',
   styleUrl: './agregar-calificacion.scss',
 })
+
+
 export class AgregarCalificacion {
   indiceSeleccionado: number | null = null;
   formularioCalificaciones = new FormGroup({
     matricula: new FormControl('', Validators.required),
     nombre: new FormControl('', Validators.required),
-    corte1: new FormControl(0, Validators.required),
-    corte2: new FormControl(0, Validators.required),
-    corte3: new FormControl(0, Validators.required),
+    corte1: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
+    corte2: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
+    corte3: new FormControl(0, [Validators.required, Validators.min(0), Validators.max(10)]),
   });
+  
 
   calificaciones = signal<any[]>([]);
 
@@ -48,9 +51,7 @@ export class AgregarCalificacion {
 
   eliminar(index: number) {
     let listaActual = this.calificaciones();
-
     listaActual.splice(index, 1);
-
     this.calificaciones.set([...listaActual]);
   }
 
