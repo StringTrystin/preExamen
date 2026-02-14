@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter,signal } from '@angular/core';
 
 @Component({
   selector: 'tr[app-calificacion]',
@@ -16,4 +16,8 @@ export class Calificacion {
  seleccionar() {
     this.seleccionarFila.emit(this.calificacion);
 }
+ eliminar() {
+    this.eliminarFila.emit();
+}
+
 }

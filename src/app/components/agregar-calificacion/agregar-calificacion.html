@@ -1,29 +1,5 @@
 
-<div class="tabla-container">
-  <table>
-    <thead>
-      <tr>
-        <th>Matricula</th>
-        <th>Nombre</th>
-        <th>Corte 1</th>
-        <th>Corte 2</th>
-        <th>Corte 3</th>
-        <th>Eliminar</th>
-        <th>Seleccionar</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(cal of calificaciones(); track cal.matricula; let i = $index) {
-        <tr
-          app-calificacion
-          [calificacion]="cal"
-          (seleccionarFila)="seleccionar(cal)"
-          (eliminarFila)="eliminar(i)">
-        </tr>
-      }
-    </tbody>
-  </table>
-</div>
+
 <div class="form-container">
 <h2>Captura de calificaciones</h2>
 
